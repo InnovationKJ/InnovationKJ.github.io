@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Publications & Thought Leadership — Karen Jensen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B263B;
+      --navy-deep: #141C2B;
+      --gold: #C9A84C;
+      --gold-light: #E2C47A;
+      --cream: #F5F0E8;
+      --slate: #8A9BB0;
+      --text-body: #3A4655;
+      --ff-head: 'Playfair Display', Georgia, serif;
+      --ff-body: 'Open Sans', system-ui, sans-serif;
+      --max-w: 900px;
+      --gutter: clamp(1rem, 4vw, 2.5rem);
+      --radius-sm: 4px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--navy-deep);
+      padding: 1.1rem var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .header-brand {
+      font-family: var(--ff-head);
+      font-size: 1.05rem;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .header-brand span { color: var(--gold); }
+    .back-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.65);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold); }
+
+    /* ── Page hero ── */
+    .page-hero {
+      background: var(--navy);
+      padding: 3.5rem var(--gutter) 3rem;
+      text-align: center;
+    }
+    .page-hero .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .page-hero h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      font-size: 1rem;
+      color: rgba(245,240,232,0.72);
+      max-width: 580px;
+      margin-inline: auto;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding: 3rem var(--gutter) 5rem;
+    }
+
+    /* ── Year group ── */
+    .year-group { margin-bottom: 3.5rem; }
+    .year-heading {
+      font-family: var(--ff-head);
+      font-size: 1.5rem;
+      color: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .year-heading .year-sub {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    /* ── Publication item ── */
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .pub-item {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 0 2rem;
+      padding-block: 1.25rem;
+      border-bottom: 1px solid rgba(26,38,59,0.12);
+      align-items: start;
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-top: 0.1rem;
+    }
+    .pub-outlet {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+    .pub-date {
+      font-size: 0.78rem;
+      color: var(--slate);
+    }
+    .pub-body { }
+    .pub-title {
+      font-family: var(--ff-body);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 0.25rem;
+    }
+    .pub-role {
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-style: italic;
+      margin-bottom: 0.35rem;
+    }
+    .pub-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .pub-link:hover { color: #8B6914; border-color: #8B6914; }
+
+    /* ── Forthcoming ── */
+    .forthcoming {
+      background: rgba(201,168,76,0.08);
+      border-left: 3px solid var(--gold);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 1rem;
+    }
+    .forthcoming .pub-title { color: var(--navy); }
+    .forthcoming .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.15em 0.55em;
+      border-radius: 2px;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 560px) {
+      .pub-item { grid-template-columns: 1fr; gap: 0.35rem; }
+      .pub-meta { flex-direction: row; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(245,240,232,0.55);
+      font-size: 0.82rem;
+      text-align: center;
+      padding: 1.25rem var(--gutter);
+    }
+    footer a { color: rgba(245,240,232,0.55); }
+    footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-brand">Karen Jensen <span>·</span> The Find a Way Group</a>
+    <a href="index.html#publications" class="back-link">← Back to site</a>
+  </header>
+
+  <div class="page-hero">
+    <p class="eyebrow">Karen Jensen</p>
+    <h1>Publications &amp; Thought Leadership</h1>
+    <p>Articles, research, and original intellectual work — 2018 to present.</p>
+  </div>
+
+  <main>
+
+    <!-- 2026 -->
+    <div class="year-group">
+      <h2 class="year-heading">2026</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">UAGC Chronicle</span><span class="pub-date">Sep 21</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Lost in Translation: What an AI Translation Study Reveals About Care and Cultural Integrity in Digital Architectures</p>
+            <p class="pub-role">Featured Article · Sole Author · Volume 12, Issue 1, Fall 26/27</p>
+            <a href="https://journals.librarypublishing.arizona.edu/coi/article/id/12209/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">UAGC Faculty Blog</span><span class="pub-date">Sep 15</span></div>
+          <div class="pub-body">
+            <p class="pub-title">The Education Revolution: A Synergy of Governance and Innovation</p>
+            <p class="pub-role">Faculty Article · Author</p>
+            <a href="https://www.uagcfacultyblog.com/2026/09/the-education-revolution-synergy-of.html" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Sep 15</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Ten Years of Volunteering</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://substack.com/@innovationkj/p-215844042" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Aug 1</span></div>
+          <div class="pub-body">
+            <p class="pub-title">The Myth of the Wealthy Boomer</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://substack.com/@innovationkj/p-209398892" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Jul 26</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Published Research: Can AI Autonomously Translate Technical Content for a Global Audience?</p>
+            <p class="pub-role">Research Communication · Author</p>
+            <a href="https://substack.com/@innovationkj/p-208603628" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">May 27</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Ethical AI Use Case #2: Do Rich People Get Better Water?</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://innovationkj.substack.com/p/ethical-ai-use-case-2-do-rich-people" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Apr 15</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Responsible AI Shorts: AI and Revenue per Employee: A Leadership Revolution</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://open.substack.com/pub/innovationkj/p/responsible-ai-shorts-ai-and-revenue" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Apr 7</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Responsible AI Shorts: Master the 30-Minute Meeting, Transform Your Culture</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://substack.com/@innovationkj/p-193484403" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Substack</span><span class="pub-date">Mar 28</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Ethical AI Use Case #1: Ten Steps for Using a Generative AI Platform to Create a Business Logo</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://substack.com/@innovationkj/p-192434373" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-group">
+      <h2 class="year-heading">2025 <span class="year-sub">Women in AI Expert Series</span></h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Prompt Like a Pro</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-prompt-like-a-pro" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Agentic AI: Navigating Autonomy, Accountability, and Ethics</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-agentic-ai-navigating-autonomy-accountability-and-ethics" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Responsible AI in Action: A Look Back at a Winning Hackathon Project</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-responsible-ai-in-action-a-look-back-at-a-winning-hackathon-proje" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Generative AI, Explicit Content, and Organizational Solutions…</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-generative-ai-explicit-content-and-organizational-solutions-for-no" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">How AI Can Help Humans Learn Language</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-how-ai-can-help-humans-learn-language" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Managing Hallucinations in Large Language Models</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-managing-hallucinations-in-large-language-models" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Intersectional Bias: Localization Challenges in AI and Solutions</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-intersectional-bias-localization-challenges-in-ai-and-solutions" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Solving the Digital Divide with Artificial Intelligence</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2025-women-in-ai-expert-series-solving-the-digital-divide-with-artificial-intelligence" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-group">
+      <h2 class="year-heading">2024</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">UAGC TLC</span><span class="pub-date">2024</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Fulfilling the Hope of Belonging: Strategies for Higher Education</p>
+            <p class="pub-role">Conference Presentation · Video</p>
+            <a href="https://youtu.be/kuINRIYrb-E?si=d-IJNGEc12LrqkPL" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span><span class="pub-date">Dec 18</span></div>
+          <div class="pub-body">
+            <p class="pub-title">2024: A Year of Impact and Innovation — The Global Women in AI Ethics &amp; Culture Office</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/2024-a-year-of-impact-and-innovation-the-global-women-in-ai-ethics-culture-office" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Women in AI Ethics in Action Speaker Series: AI and Education — The Ethical Impacts</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/women-in-ai-ethics-in-action-speaker-series-ai-and-education-the-ethical-impacts" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Women in AI Ethics in Action Speaker Series: AI Regulations and Their Global Impact on Ethics</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/women-in-ai-ethics-in-action-speaker-series-ai-regulations-and-their-global-impact-on-ethics" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Women in AI Ethics in Action Speaker Series: Overcoming Bias and Fostering Change</p>
+            <p class="pub-role">Article · Principal Author</p>
+            <a href="https://www.womeninai.co/post/women-in-ai-ethics-in-action-speaker-series-overcoming-bias-and-fostering-change" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2023 -->
+    <div class="year-group">
+      <h2 class="year-heading">2023</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Women in AI</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Moving Ethics from Talk to Action</p>
+            <p class="pub-role">Responsible AI Hackathon · Principal Author</p>
+            <a href="https://wai-responsible-ai-hackathon.devpost.com/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Gender Equality in AI, a Video Experiment</p>
+            <p class="pub-role">Article / Video Experiment · Author</p>
+            <a href="https://www.linkedin.com/pulse/gender-equality-ai-created-video-experiment-karen-jensen/" class="pub-link" target="_blank" rel="noopener">View article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Does the AI Preference for a Female Voice and Appearance Perpetuate Gender Inequality?</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/does-female-voice-appearance-perpetuate-gender-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">ChatGPT, A Discussion for Adjunct Faculty</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/chatgpt-discussion-adjunct-faculty-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2021 -->
+    <div class="year-group">
+      <h2 class="year-heading">2021</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">5 Tips for Successful Career Transitioning</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/5-tips-successful-career-transitioning-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">WiCyS / AI Trusted Affiliate</span><span class="pub-date">2021</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Building Responsible &amp; Trusted AI Event</p>
+            <p class="pub-role">Event · Video</p>
+            <a href="https://youtu.be/wICUoI3q-Ks?si=C4XaF-PVrS-9wTI8" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2020 -->
+    <div class="year-group">
+      <h2 class="year-heading">2020</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Authority Magazine</span></div>
+          <div class="pub-body">
+            <p class="pub-title">5 Steps We Must Take to Truly Create an Inclusive, Representative and Equitable Society</p>
+            <p class="pub-role">Featured Interview · Medium</p>
+            <a href="https://medium.com/authority-magazine/karen-jensen-of-saaby-consulting-company-we-all-have-a-responsibility-to-take-it-on-ourselves-to-ff22ef859059" class="pub-link" target="_blank" rel="noopener">Read interview →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Authority Magazine</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Lessons from Inspirational Women in STEM and Tech</p>
+            <p class="pub-role">Featured Interview · Medium</p>
+            <a href="https://medium.com/authority-magazine/inspirational-women-in-stem-and-tech-dont-try-to-think-like-a-man-or-compromise-yourself-as-a-5c12b17bf68" class="pub-link" target="_blank" rel="noopener">Read interview →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">NIST NICE</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Successful Strategies for Cybersecurity Hiring</p>
+            <p class="pub-role">Publication · Principal Author</p>
+            <a href="https://www.nist.gov/system/files/documents/2020/10/30/HR%20One%20Pager%20Final.pdf" class="pub-link" target="_blank" rel="noopener">Read publication →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">NIST GCTC</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Guidance for Smart Cities and Municipalities: Cyber Supply Chain Risk Management (C-SCRM)</p>
+            <p class="pub-role">Publication · Co-author</p>
+            <a href="https://pages.nist.gov/GCTC/uploads/blueprints/2020-GCTC-CPAC-C-SCRM.pdf" class="pub-link" target="_blank" rel="noopener">Read publication →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Cybersecurity Symposium for Smart Cities</span><span class="pub-date">2020</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Critical Infrastructure and Supply Chain Contract</p>
+            <p class="pub-role">Conference Presentation</p>
+            <a href="https://www.linkedin.com/posts/innovation-by-karen-jensen_cybersecurity-supplychainmanagement-criticalinfrastructure-share-6719943695547846656-D8pX/" class="pub-link" target="_blank" rel="noopener">View on LinkedIn →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">SANS</span><span class="pub-date">2020</span></div>
+          <div class="pub-body">
+            <p class="pub-title">SANS Summit: Women in Cybersecurity: Action and Allies</p>
+            <p class="pub-role">Presentation</p>
+            <a href="https://www.linkedin.com/posts/innovation-by-karen-jensen_had-a-great-time-presenting-at-this-event-share-6694992362743099392-TUdy/" class="pub-link" target="_blank" rel="noopener">View on LinkedIn →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Saaby Consulting</span><span class="pub-date">2020</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Everything Cities™ / 3-D Smart City Systems Blueprint</p>
+            <p class="pub-role">Original Framework · Video</p>
+            <a href="https://www.youtube.com/watch?v=QNjGeTW7fZU" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Saaby Consulting</span><span class="pub-date">2020</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Business to Business Innovation Consulting</p>
+            <p class="pub-role">Presentation · Video</p>
+            <a href="https://www.youtube.com/watch?v=K7eyOBNCwD4" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Bailouts and the Airline Industry: Where Did All the Record Profits Go?</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/bailouts-airline-industry-where-did-all-record-profits-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2019 -->
+    <div class="year-group">
+      <h2 class="year-heading">2019</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">NICE K12 Conference</span><span class="pub-date">2019</span></div>
+          <div class="pub-body">
+            <p class="pub-title">The R3X and SNSE Models for Lifelong Learning</p>
+            <p class="pub-role">Conference Presentation · Original Models</p>
+            <a href="https://www.credly.com/badges/e5753137-8826-4c66-aaab-40be3537887d/linked_in" class="pub-link" target="_blank" rel="noopener">View credential →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Saaby Consulting</span><span class="pub-date">2019</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Business to People Solutions for Lifelong Learning</p>
+            <p class="pub-role">Presentation · Video</p>
+            <a href="https://youtu.be/xpdl3kOmXFE?si=DfujPpLK5ktYU_fz" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Saaby Consulting</span><span class="pub-date">2019</span></div>
+          <div class="pub-body">
+            <p class="pub-title">NextGen Diversity &amp; Inclusion</p>
+            <p class="pub-role">Presentation · Video</p>
+            <a href="https://youtu.be/PWrPzuwQjB8?si=mQ1sRuItq_SfZCKQ" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">Oct 3</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Standardizing the Language of Cybersecurity Job Titles</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/standardizing-language-cybersecurity-job-titles-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">Aug 27</span></div>
+          <div class="pub-body">
+            <p class="pub-title">How to Handle Rejection in Business</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/how-handle-rejection-business-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">Aug 12</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Exponential Technologies and the New Digital Age Workforce</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/exponential-technologies-new-digital-age-workforce-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">Jun 13</span></div>
+          <div class="pub-body">
+            <p class="pub-title">The Journey of an Opportunistic Entrepreneur</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/journey-opportunistic-entrepreneur-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">May 16</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Business in the Cloud for Small Business</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/business-cloud-small-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">May 7</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Organic Profits: The Next Generation of CSR</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/organic-profits-next-generation-csr-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">She Owns It</span><span class="pub-date">May 1</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Smart Cities, Small Businesses and Innovation</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://sheownsit.com/smart-cities-small-businesses-and-innovation-by-saabyconsulting/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span><span class="pub-date">Apr 17</span></div>
+          <div class="pub-body">
+            <p class="pub-title">How Ethical Leadership Can Master Data to Drive Solutions</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/how-ethical-leadership-can-master-data-drive-solutions-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">She Owns It</span><span class="pub-date">Apr 1</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Risk Management for Small Businesses</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://sheownsit.com/risk-management-for-small-businesses-by-saabyconsulting/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">She Owns It</span><span class="pub-date">Mar 15</span></div>
+          <div class="pub-body">
+            <p class="pub-title">What Kind of Leader Are You?</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://sheownsit.com/what-kind-of-leader-are-you-by-saabyconsulting/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">She Owns It</span><span class="pub-date">Jan 25</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Tips to Keep Your Business from Running Out of Business</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://sheownsit.com/tips-to-keep-your-business-from-running-out-of-business-by-saabyconsulting/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">A Solution for the Living Wage Dilemma</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://www.linkedin.com/pulse/solution-living-wage-dilemma-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">She Owns It</span></div>
+          <div class="pub-body">
+            <p class="pub-title">The Power of You in Business</p>
+            <p class="pub-role">Article · Author</p>
+            <a href="https://sheownsit.com/the-power-of-you-in-business-by-saabyconsulting/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2018 -->
+    <div class="year-group">
+      <h2 class="year-heading">2018</h2>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">LinkedIn</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Disparity to Opportunity: Industry 4.0 Meets Workforce 4.0</p>
+            <p class="pub-role">Article · Author · Saaby Consulting</p>
+            <a href="https://www.linkedin.com/pulse/disparity-opportunity-industry-40-meets-workforce-karen-jensen/" class="pub-link" target="_blank" rel="noopener">Read article →</a>
+          </div>
+        </li>
+        <li class="pub-item">
+          <div class="pub-meta"><span class="pub-outlet">Saaby Consulting</span></div>
+          <div class="pub-body">
+            <p class="pub-title">Saaby Consulting Abbott (AI) Prototype</p>
+            <p class="pub-role">AI Prototype · Video</p>
+            <a href="https://youtu.be/nNqcyuFe0Nw?si=Xf5XjP9Gvoe_BmUG" class="pub-link" target="_blank" rel="noopener">Watch video →</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Coming Soon -->
+    <div class="year-group">
+      <h2 class="year-heading">Coming Soon</h2>
+      <div class="forthcoming">
+        <p class="pub-title">60 Years of the Status of Women — Are We Better Off Than Our Mothers? <span style="font-weight:400;">A Narrative Nonfiction Work</span></p>
+        <p style="margin-top:0.9rem; font-size:0.97rem; font-weight:600; color:var(--navy); line-height:1.4;">AI Storytelling Series: A Social Justice Project<br><span style="font-weight:400; font-style:italic; color:var(--slate);">A Human Directed AI Assisted Video Documentary</span></p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Karen Jensen · <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
