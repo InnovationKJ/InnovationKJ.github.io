@@ -1134,7 +1134,126 @@
     .journey-body,
     .testimonial-role { color: #5A6878; }
     .iw-tagline { color: var(--slate); }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--cream-dark);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover { box-shadow: 0 6px 24px rgba(27,38,59,0.12); }
+    .project-card__img-link { display: block; }
+    .project-card__img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 1;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .project-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .project-card__body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.5rem;
+    }
+    .project-card__label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin: 0;
+    }
+    .project-card__title {
+      font-family: var(--ff-head);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .project-card__desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+    .project-card__link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      text-decoration: none;
+    }
+    .project-card__link:hover { color: var(--navy); }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karen Jensen",
+    "jobTitle": "Executive Advisor",
+    "description": "Executive advisor and AI ethics researcher helping people and organizations transform from current state to future state across industry, government, nonprofit, and education ecosystems. Brings a cross-sector perspective to organizations navigating transformation, AI, emerging technology, and complex change. Available for fractional CAIO engagements, advisory board roles, and strategic consulting. Blog writer for the Women in AI Global Office of Ethics and Culture from 2023 to 2026. Her research on AI and cultural integrity has been published on ResearchGate, presented at the University of Arizona AI Insights series, and featured in international forums on responsible AI.",
+    "url": "https://karenjensen.io",
+    "email": "innovation@karenjensen.io",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "The Find a Way Group, LLC",
+      "url": "https://karenjensen.io"
+    },
+    "founder": {
+      "@type": "Organization",
+      "name": "Saaby Consulting Company",
+      "description": "SBA-certified Woman-Owned Small Business (WOSB) delivering IT consulting, strategy, process improvement, and change management. Founded and led for 11 years."
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Western Governors University" },
+      { "@type": "CollegeOrUniversity", "name": "Ivy Tech Community College" }
+    ],
+    "knowsAbout": [
+      "AI Strategy", "AI Governance", "Digital Transformation",
+      "Organizational Transformation", "Cybersecurity", "Smart Cities",
+      "Public Sector Consulting", "Change Management", "Fractional CAIO",
+      "Workforce Development", "Policy Advice", "Healthcare IT"
+    ],
+    "affiliation": [
+      { "@type": "Organization", "name": "Women in AI" },
+      { "@type": "Organization", "name": "Leading Cities" },
+      { "@type": "Organization", "name": "National Institute of Standards and Technology (NIST)" },
+      { "@type": "Organization", "name": "University of Arizona Global Campus" },
+      { "@type": "Organization", "name": "Patient-Centered Outcomes Research Institute (PCORI)" },
+      { "@type": "Organization", "name": "Saaby Consulting Company" },
+      { "@type": "Organization", "name": "South Central Indiana Master Gardener Association (SCIMGA) / Purdue Extension, Bartholomew County" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/innovation-by-karen-jensen/",
+      "https://innovationkj.substack.com",
+      "https://pages.nist.gov/GCTC/uploads/blueprints/2020-GCTC-CPAC-C-SCRM.pdf"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -1152,6 +1271,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#fees">Fees</a></li>
       <li><a href="#testimonials">Verified Recommendations</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#contact" class="nav-cta">Ready to Transform?</a></li>
     </ul>
@@ -1204,7 +1324,7 @@
       <div class="about-intro reveal">
         <p class="about-lede">I think every organization has a rhythm. But sometimes that rhythm gets lost, or it's out of sync.</p>
         <p class="about-lede">That's current state. And that's where I come in. I help organizations understand what's working, and what isn't, then design a future state that's rare:</p>
-        <p class="about-lede"><strong>Organizational Happiness™</strong> — moving from <em>"this is how we've always done things"</em> to optimal performance, where smart technologies and human solutions harmonize.</p>
+        <p class="about-lede"><strong>Organizational Happiness™</strong> — my framework for organizational change, transformation and AI adoption — moving leadership teams from <em>"this is how we've always done things"</em> to optimal performance, where smart technologies and human solutions harmonize.</p>
         <p class="about-lede">Built on High Trust leadership and High Performance Work Systems. Measurable. For people, for organizations, and for a sustainable future.</p>
       </div>
       <div class="divider reveal"></div>
@@ -1269,7 +1389,7 @@
         <h2 class="section-title">Enterprise Expertise.<br>Outcomes achieved, not Hours billed.</h2>
         <div class="divider"></div>
         <p class="section-body">Too often, when you hire a consultant, you feel like the questions you had never really got answered. You start to doubt yourself. That's not how I work.</p>
-        <p class="section-body" style="margin-top:1rem;">My practice operates on an Organic Profits™ Model — where profits and purpose aren't a tradeoff.</p>
+        <p class="section-body" style="margin-top:1rem;">My practice operates on an Organic Profits™ Model — an architecture for sustainable business practices and economic justice.</p>
         <p class="section-body" style="margin-top:1rem;">And I always leave something unexpected behind — an insight, a hidden risk uncovered, an unopened door.</p>
       </div>
       <div class="fees-pillars reveal">
@@ -1337,6 +1457,38 @@
       <p class="reveal" style="margin-top:2rem; text-align:center;">
         <a href="https://www.linkedin.com/in/innovation-by-karen-jensen/" target="_blank" rel="noopener" style="font-size:0.95rem; font-weight:600; color:var(--gold);">See all recommendations on LinkedIn →</a>
       </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section id="projects" class="section" aria-label="Projects">
+    <div class="container">
+      <h2 class="section-title reveal" style="margin-bottom:0.25rem;">Projects</h2>
+      <div class="divider reveal"></div>
+
+      <div class="projects-grid reveal">
+
+        <!-- Are We Better Off -->
+        <article class="project-card">
+          <a href="https://karenjensen.io/women-research-and-real-life/" class="project-card__img-link" target="_blank" rel="noopener" aria-label="Visit the Are We Better Off Than Our Mothers site">
+            <div class="project-card__img-wrap">
+              <img
+                src="https://karenjensen.io/women-research-and-real-life/awbo-banner.png"
+                alt="Diverse group of women — Are We Better Off Than Our Mothers?"
+                class="project-card__img"
+                loading="lazy"
+              />
+            </div>
+          </a>
+          <div class="project-card__body">
+            <p class="project-card__label">Research · Women · Intergenerational</p>
+            <h3 class="project-card__title">Are We Better Off Than Our Mothers?</h3>
+            <p class="project-card__desc">Women: Research &amp; Real Life. A multi-generational study exploring whether women today are truly better off — economically, professionally, and personally — than the generation before them.</p>
+            <a href="https://karenjensen.io/women-research-and-real-life/" class="project-card__link" target="_blank" rel="noopener">Learn more →</a>
+          </div>
+        </article>
 
       </div>
     </div>
